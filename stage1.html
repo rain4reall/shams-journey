@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرحلة الأولى ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="stage-container">
+
+    <div class="stage-number">
+        المرحلة الأولى من 4
+    </div>
+
+    <h1 class="stage-title">
+        مبروك يا شمس ❤️
+    </h1>
+
+    <div class="card">
+
+        <div class="message" id="message"></div>
+
+        <div class="question" id="question" style="display:none;">
+
+            هل تغير فيك شي او تغيرت اولويات الك من لما تعرفنا لحد الآن؟
+
+        </div>
+
+    </div>
+
+    <button
+        class="next-button"
+        id="doneButton"
+        style="display:none;"
+        onclick="finishStage()">
+
+        أجبتك في الشات ❤️
+
+    </button>
+
+</main>
+
+<script>
+
+const message = `مبروك عليك خلصتي اول نصف مادة بنجاح بالمرحلة الاولى هي رح اهديك رسالة تهنئة لبلوغك هي المرحلة بالدراسة وبالرسالة في سؤال رح اكون منتظر جوابه منك بالشات:
+
+شمس، لطالما آمنت بنورك النابع من اسمك كحقيقة ومش كمعنى… شفت منك سعادة ماتوقعت انها موجودة ولكن أقنعتيني بوجودها وبكل مرة بتكسري توقعاتي بإصرارك على التميز واللمعان بوسط الظلام المحيط فيني،
+
+انا دريد مؤمن وبكامل قواي العقلية من نجاحك وحصولك على معدل مثالي بيخليك تلاحقي احلامك ذات السقف العالي يلي متأكد انك رح تكسريه…
+
+بالنسبة الي لاحقت احلامي والأشياء يلي بحبها لكن اكبر حلم رح الاحقه هوا انتي لأن مافي معنى للسعادة والأحلام بدونك،`;
+
+let index = 0;
+const speed = 25;
+
+function typeWriter() {
+
+    if (index < message.length) {
+
+        document.getElementById("message").textContent += message.charAt(index);
+
+        index++;
+
+        setTimeout(typeWriter, speed);
+
+    } else {
+
+        document.getElementById("question").style.display = "block";
+
+        setTimeout(() => {
+            document.getElementById("doneButton").style.display = "block";
+        }, 800);
+    }
+}
+
+function finishStage() {
+
+    alert("إجابتك بانتظارها بالشات ❤️");
+
+}
+
+typeWriter();
+
+</script>
+
+</body>
+</html>
